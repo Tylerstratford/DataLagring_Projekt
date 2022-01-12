@@ -17,6 +17,7 @@ namespace DataLagring_Projekt.Helpers
             _canExecute = canExecute;
         }
 
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
