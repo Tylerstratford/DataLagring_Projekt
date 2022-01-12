@@ -19,9 +19,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Background="#e6e6e6">
-            <Button Content="Start" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
-            <Button Content="Create Customer" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
-            <Button Content="Customer List"  Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Start" Height="25" Command="{Binding StartViewCommand}" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Create Customer" Command="{Binding CreateCustomerViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0" />
+            <Button Content="Customer List" Command="{Binding CustomerViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0" />
             <Button Content="Register Errand" Command="{Binding RegisterErrandViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
             <Button Content="List of Errands" Command="{Binding ListOfErrandsViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
         </StackPanel>
