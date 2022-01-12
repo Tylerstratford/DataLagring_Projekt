@@ -23,6 +23,9 @@ namespace DataLagring_Projekt
         public MainWindow()
         {
             InitializeComponent();
+
+
+
         }
     }
 }
