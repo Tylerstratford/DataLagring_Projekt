@@ -13,8 +13,7 @@ namespace DataLagring_Projekt.Models
 
         public string Email { get; set; } = null!;
 
-        public int Telephone { get; set; }
-        public int Mobile { get; set; }
+        public string Telephone { get; set; } = null!;
 
         public virtual Address Address { get; set; } = null!;
     }

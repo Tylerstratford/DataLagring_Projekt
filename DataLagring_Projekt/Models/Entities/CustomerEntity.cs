@@ -24,13 +24,11 @@ namespace DataLagring_Projekt.Models.Entities
 
         [Required]
         [StringLength(100)]
+        [Unicode(false)]
         public string Email { get; set; } = null!;
 
         [Required]
-        public int Telephone { get; set; }
-
-        [Required]
-        public int Mobile { get; set; }
+        public string Telephone { get; set; } = null!;
 
         [Required]
         public int AddressId { get; set; }

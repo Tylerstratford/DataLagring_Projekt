@@ -14,16 +14,14 @@ namespace DataLagring_Projekt.Services
     {
         private readonly SqlContext _context = new SqlContext();
 
-        public int Create(Address address)
+        //Create Address
+        public int CreateAddress(Address address)
         {
-            var _address = _context.Addresses.Where(x => x.StreetName == address.StreetName 
-            && x.PostalCode == address.PostalCode 
-            && x.City == address.City 
-            && x.Country == address.Country).FirstOrDefault();
+            var _address = _context.Addresses.Where(x => x.StreetName == address.StreetName && x.PostalCode == address.PostalCode && x.City == address.City && x.Country == address.Country).FirstOrDefault();
 
-            if(address == null)
+            if(_address == null)
             {
-                var addressEntity = new AddressEntity { StreetName = address.StreetName, PostalCode = address.PostalCode, City=address.City, Country=address.Country };
+                var addressEntity = new AddressEntity { StreetName = address.StreetName, PostalCode = address.PostalCode, City = address.City, Country = address.Country };
                 
                 _context.Addresses.Add(addressEntity);
                 _context.SaveChanges();
@@ -34,7 +32,7 @@ namespace DataLagring_Projekt.Services
 
 
         //Create Customer
-        public int Create(Customer customer)
+        public int CreateCustomer(Customer customer)
         {
             var _customer = _context.Customers.Where(x => x.Email == customer.Email).FirstOrDefault();
 
@@ -46,8 +44,8 @@ namespace DataLagring_Projekt.Services
                 CustomerEntity.LastName = customer.LastName;
                 CustomerEntity.Email = customer.Email;
                 CustomerEntity.Telephone = customer.Telephone;
-                CustomerEntity.Mobile = customer.Mobile;
-                CustomerEntity.AddressId = Create(customer.Address);
+                CustomerEntity.AddressId = CreateAddress(customer.Address);
+
                 _context.Customers.Add(CustomerEntity);
                 _context.SaveChanges();
                 return CustomerEntity.Id;

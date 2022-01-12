@@ -4,9 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataLagring_Projekt"
+        xmlns:viewModel="clr-namespace:DataLagring_Projekt.Models.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#e6e6e6">
+            <Button Content="Start" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Create Customer" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Customer List"  Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Register Errand" Command="{Binding RegisterErrandViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="List of Errands" Command="{Binding ListOfErrandsViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+        </StackPanel>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
     </Grid>
 </Window>

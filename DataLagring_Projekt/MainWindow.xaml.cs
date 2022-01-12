@@ -1,4 +1,5 @@
 ﻿using DataLagring_Projekt.Models;
+using DataLagring_Projekt.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +26,25 @@ namespace DataLagring_Projekt
         {
             InitializeComponent();
 
-            Customer cust = new Customer();
-            cust.FirstName = "Tyler";
-            cust.LastName = "Stratford";
-            cust.Mobile = 0761720282;
-            cust.Email = "Tylerstratford@hotmail.com";
-            cust.Telephone = 0761720282;
+            Customer customer = new Customer()
+            {
+                FirstName = "Ty",
+                LastName = "Strat",
+                Email = "tyler@hotmail.com",
+                Telephone = "0761720282",
+                Address = new Address
+                {
+                    StreetName = "StreetOne",
+                    City = "Örebro",
+                    PostalCode = "70233",
+                    Country = "Sweden"
+                }
+            };
 
+            SqlService sql = new SqlService();
+            var customerId = sql.CreateCustomer(customer);
         }
+
+    
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLagring_Projekt.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220112105915_init")]
+    [Migration("20220112145340_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,12 +42,10 @@ namespace DataLagring_Projekt.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PostalCode")
-                        .HasMaxLength(5)
-                        .HasColumnType("int");
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("StreetName")
                         .IsRequired()
@@ -85,13 +83,14 @@ namespace DataLagring_Projekt.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AddressEntityId")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -103,16 +102,13 @@ namespace DataLagring_Projekt.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Mobile")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Telephone")
-                        .HasColumnType("int");
+                    b.Property<string>("Telephone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressEntityId")
-                        .IsUnique();
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("Email")
                         .IsUnique();
@@ -191,13 +187,13 @@ namespace DataLagring_Projekt.Migrations
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.CustomerEntity", b =>
                 {
-                    b.HasOne("DataLagring_Projekt.Models.Entities.AddressEntity", "AddressEntity")
-                        .WithOne("CustomerEntity")
-                        .HasForeignKey("DataLagring_Projekt.Models.Entities.CustomerEntity", "AddressEntityId")
+                    b.HasOne("DataLagring_Projekt.Models.Entities.AddressEntity", "Address")
+                        .WithMany("Customers")
+                        .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AddressEntity");
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.ErrandsEntity", b =>
@@ -229,8 +225,7 @@ namespace DataLagring_Projekt.Migrations
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.AddressEntity", b =>
                 {
-                    b.Navigation("CustomerEntity")
-                        .IsRequired();
+                    b.Navigation("Customers");
                 });
 #pragma warning restore 612, 618
         }

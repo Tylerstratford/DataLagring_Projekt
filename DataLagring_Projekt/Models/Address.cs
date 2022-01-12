@@ -10,7 +10,7 @@ namespace DataLagring_Projekt.Models
     {
         public string StreetName { get; set; } = null!;
 
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; } = null!;
 
         public string City { get; set; } = null!;
 
