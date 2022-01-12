@@ -33,8 +33,8 @@ namespace DataLagring_Projekt.Models.Entities
         public int Mobile { get; set; }
 
         [Required]
-        public int AddressEntityId { get; set; }
-        public virtual AddressEntity AddressEntity { get; set; } = null!;
+        public int AddressId { get; set; }
+        public virtual AddressEntity Address { get; set; } = null!;
 
         //public virtual ICollection<AddressEntity> Address { get; set; } = null!;
 

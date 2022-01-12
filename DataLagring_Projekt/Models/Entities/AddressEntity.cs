@@ -27,8 +27,6 @@ namespace DataLagring_Projekt.Models.Entities
         [StringLength(50)]
         public string Country { get; set; } = null!;
 
-        [Required]
-        public int CustomerId { get; set; }
-        public virtual CustomerEntity CustomerEntity { get; set; } = null!;
+        public virtual ICollection<CustomerEntity> Customers { get; set; } = new List<CustomerEntity>();
     }
 }
