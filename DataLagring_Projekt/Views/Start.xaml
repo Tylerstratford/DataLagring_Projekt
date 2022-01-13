@@ -6,7 +6,30 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20">
-        <Label Content="Start" Foreground="#0071bc" FontSize="20"></Label>
-    </Grid>
+    <Grid>
+        <StackPanel>
+            <Label Content="Start" HorizontalAlignment="center" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
+            <Label Content="Recent Errands posted" HorizontalAlignment="center" Foreground="#0071bc" FontSize="20"></Label>
+        </StackPanel>
+        <Grid Margin="20 90 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Errand" Foreground="#0071bc" Grid.Column="0" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Customer" Foreground="#0071bc" Grid.Column="1" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Subject" Foreground="#0071bc" Grid.Column="2" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Description" Foreground="#0071bc" Grid.Column="3" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Status" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" ></TextBlock>
+
+        </Grid>
+     </Grid>
 </UserControl>

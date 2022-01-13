@@ -6,7 +6,73 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20" >
-        <Label Content="Create Customer" Foreground="#0071bc" FontSize="20"></Label>
+    <Grid>
+        <StackPanel>
+        <Label Content="Create Customer" HorizontalAlignment="center" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
+        </StackPanel>
+            <Grid Margin="20 90 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Contact Information" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Foreground="#0071bc" FontSize="18" Margin="0 0 0 25"/>
+                <!--FirstName-->
+            <TextBlock Text="First Name" Grid.Row="1" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--LastName-->
+            <TextBlock Text="Last Name" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--Email-->
+            <TextBlock Text="Email Address" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--TelephoneNumber-->
+            <TextBlock Text="Telephone Number" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--Address Information-->
+            <TextBlock Text="Address Information" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" Foreground="#0071bc" FontSize="18" Margin="0 20 0 25"/>
+               
+                <!--StreetName-->
+            <TextBlock Text="Street Name" Grid.Row="6" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="7" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--Postal Code-->
+            <TextBlock Text="Postal Code" Grid.Row="6" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="7" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--City-->
+            <TextBlock Text="City" Grid.Row="8" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="9" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+                
+                <!--Country-->
+            <TextBlock Text="Country" Grid.Row="8" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="9" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+                <!--Create Customer-->
+            <Button Content="Create Customer" Width="150" Grid.Row="9" Grid.Column="3" Margin="25 0 0 10"></Button>
+        </Grid>
+
     </Grid>
 </UserControl>
+
+
+<!--Foreground="#0071bc"-->
+<!--Background="#e6e6e6"-->

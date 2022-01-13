@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DataLagring_Projekt"
         xmlns:viewModel="clr-namespace:DataLagring_Projekt.Models.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="1000">
 
     <Window.DataContext>
         <viewModel:MainWindowViewModel />
