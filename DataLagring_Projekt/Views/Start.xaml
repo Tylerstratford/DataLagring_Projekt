@@ -7,11 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Label Content="Start" HorizontalAlignment="center" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
-            <Label Content="Recent Errands posted" HorizontalAlignment="center" Foreground="#0071bc" FontSize="20"></Label>
+        <StackPanel Margin="20 0 0 0">
+            <Label Content="Start" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
+            <Label Content="Recent Errands posted" Foreground="#0071bc" FontSize="20"></Label>
         </StackPanel>
-        <Grid Margin="20 90 20 0">
+        <Grid Margin="25 90 20 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />

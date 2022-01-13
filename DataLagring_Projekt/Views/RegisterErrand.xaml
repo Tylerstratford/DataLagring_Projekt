@@ -6,7 +6,48 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20">
-        <Label Content="Register Errand" Foreground="#0071bc" FontSize="20"></Label>
+    <Grid>
+        <Label Content="Register Errand" Foreground="#0071bc" FontSize="23" FontWeight="Medium" Margin="15 0 0 0"></Label>
+        <Grid Margin="20 90 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+               <!--CustomerID-->
+            <TextBlock Text="Customer Id" Grid.Row="1" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Administrator-->
+            <TextBlock Text="Administrator" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+                <!--Subject-->
+            <TextBlock Text="Subject" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+                <!--Status-->
+            <TextBlock Text="Status" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+                <!--Description-->
+            <TextBlock Text="Description" Grid.Row="5" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox Background="#e6e6e6" Height="60" MaxHeight="60" TextWrapping="Wrap" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <Button Content="Create Customer" Width="150" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="3" Margin="25 0 0 10"></Button>
+
+        </Grid>
     </Grid>
 </UserControl>
