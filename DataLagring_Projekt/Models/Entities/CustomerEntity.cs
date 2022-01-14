@@ -34,6 +34,8 @@ namespace DataLagring_Projekt.Models.Entities
         public int AddressId { get; set; }
         public virtual AddressEntity Address { get; set; } = null!;
 
+        public virtual ICollection<ErrandsEntity> Errands { get; set; }
+
         //public virtual ICollection<AddressEntity> Address { get; set; } = null!;
 
     }

@@ -28,11 +28,9 @@ namespace DataLagring_Projekt.Models.Entities
 
         [Required]
         public int CustomerId { get; set; }
-        public virtual CustomerEntity CustomerEntity { get; set; } = null!;
+
         public int StatusId { get; set; }
-        public virtual StatusEntity StatusEntity { get; set; } = null!;
         public int AdminId { get; set; }
-        public virtual AdminsEntity AdminsEntity { get; set; } = null!;
 
 
     }

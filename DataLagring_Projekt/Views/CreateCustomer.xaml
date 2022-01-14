@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
     <Grid>
         <StackPanel Margin="15">
-        <Label Content="Create Customer" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
+            <Label Content="Create Customer" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
         </StackPanel>
-            <Grid Margin="20 90 20 0">
+        <Grid Margin="20 90 20 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="25" />
@@ -28,46 +28,50 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Contact Information" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Foreground="#0071bc" FontSize="18" Margin="0 0 0 25"/>
-                <!--FirstName-->
+            <!--FirstName-->
             <TextBlock Text="First Name" Grid.Row="1" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--LastName-->
-            <TextBlock Text="Last Name" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--Email-->
-            <TextBlock Text="Email Address" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--TelephoneNumber-->
-            <TextBlock Text="Telephone Number" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--Address Information-->
-            <TextBlock Text="Address Information" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" Foreground="#0071bc" FontSize="18" Margin="0 20 0 25"/>
-               
-                <!--StreetName-->
-            <TextBlock Text="Street Name" Grid.Row="6" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="7" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--Postal Code-->
-            <TextBlock Text="Postal Code" Grid.Row="6" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="7" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--City-->
-            <TextBlock Text="City" Grid.Row="8" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="9" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
-                
-                <!--Country-->
-            <TextBlock Text="Country" Grid.Row="8" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="9" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbFirstName"  Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
-                <!--Create Customer-->
-            <Button Content="Create Customer" Width="150" Grid.Row="9" Grid.Column="3" Margin="25 0 0 10"></Button>
+            <!--LastName-->
+            <TextBlock Text="Last Name" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbLastName" Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Email-->
+            <TextBlock Text="Email Address" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbEmail" Background="#e6e6e6" Grid.Row="3" Grid.Column="0" BorderBrush="Transparent" Margin="0,0,0,10" Height="18" Grid.RowSpan="2" VerticalAlignment="Bottom"></TextBox>
+
+            <!--TelephoneNumber-->
+            <TextBlock Text="Telephone Number" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbTelephone" Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Address Information-->
+            <TextBlock Text="Address Information" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" Foreground="#0071bc" FontSize="18" Margin="0 20 0 25"/>
+
+            <!--StreetName-->
+            <TextBlock Text="Street Name" Grid.Row="6" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbStreetName" Background="#e6e6e6" Grid.Row="7" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Postal Code-->
+            <TextBlock Text="Postal Code" Grid.Row="6" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbPostalCode" Background="#e6e6e6" Grid.Row="7" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--City-->
+            <TextBlock Text="City" Grid.Row="8" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbCity" Background="#e6e6e6" Grid.Row="9" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Country-->
+            <TextBlock Text="Country" Grid.Row="8" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10"></TextBlock>
+            <TextBox x:Name="tbCountry" Background="#e6e6e6" Grid.Row="9" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+
+            <!--Create Customer-->
+            <Button x:Name="btnAdd" Content="Create Customer" Width="150" Grid.Row="9" Grid.Column="3" Margin="25 0 0 10" Click="btnAdd_Click"></Button>
+        
+            <!--ErrorMessage-->
+            <TextBlock x:Name="tbError" Text="" Grid.Row="10" Grid.ColumnSpan="4" HorizontalAlignment="center" Foreground="Red" FontSize="16"></TextBlock>
         </Grid>
 
     </Grid>

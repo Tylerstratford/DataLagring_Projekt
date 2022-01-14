@@ -85,33 +85,18 @@ namespace DataLagring_Projekt.Migrations
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateEdited = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
-                    CustomerEntityId = table.Column<int>(type: "int", nullable: false),
                     StatusId = table.Column<int>(type: "int", nullable: false),
-                    StatusEntityId = table.Column<int>(type: "int", nullable: false),
                     AdminId = table.Column<int>(type: "int", nullable: false),
-                    AdminsEntityId = table.Column<int>(type: "int", nullable: false)
+                    CustomerEntityId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Errands", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Errands_Admins_AdminsEntityId",
-                        column: x => x.AdminsEntityId,
-                        principalTable: "Admins",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Errands_Customers_CustomerEntityId",
                         column: x => x.CustomerEntityId,
                         principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Errands_Statuses_StatusEntityId",
-                        column: x => x.StatusEntityId,
-                        principalTable: "Statuses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -126,34 +111,24 @@ namespace DataLagring_Projekt.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Errands_AdminsEntityId",
-                table: "Errands",
-                column: "AdminsEntityId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Errands_CustomerEntityId",
                 table: "Errands",
                 column: "CustomerEntityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Errands_StatusEntityId",
-                table: "Errands",
-                column: "StatusEntityId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Errands");
-
-            migrationBuilder.DropTable(
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Errands");
 
             migrationBuilder.DropTable(
                 name: "Statuses");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Addresses");

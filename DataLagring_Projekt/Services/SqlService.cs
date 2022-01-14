@@ -1,6 +1,7 @@
 ﻿using DataLagring_Projekt.Data;
 using DataLagring_Projekt.Models;
 using DataLagring_Projekt.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,50 @@ namespace DataLagring_Projekt.Services
                 _context.SaveChanges();
                 return CustomerEntity.Id;
             }
-            return _customer.Id;
+            return -1;
+        }
+
+        //Create Admin
+        public int CreateAdmin(Admins admin)
+        {
+            var _admin = _context.Admins.Where(x => x.AdminName == admin.AdminName).FirstOrDefault();
+            if(_admin == null)
+            {
+                var AdminsEntity = new AdminsEntity { AdminName = admin.AdminName};
+                AdminsEntity.AdminName = admin.AdminName;
+
+                _context.Admins.Add(AdminsEntity);
+                _context.SaveChanges();
+                return AdminsEntity.Id;
+            }
+            return _admin.Id;
+        }
+        public int CreateErrand(Errands errand)
+        {
+            var _errand = _context.Errands.Where(x => x.Subject == errand.Subject).FirstOrDefault();
+            if (_errand == null)
+            {
+                var ErrandsEntity = new ErrandsEntity();
+
+                ErrandsEntity.Subject = errand.Subject;
+                ErrandsEntity.CustomerId = errand.CustomerId;
+                ErrandsEntity.StatusId = errand.StatusId;
+                ErrandsEntity.Description = errand.description;
+                ErrandsEntity.AdminId = errand.AdminId;
+
+                _context.Errands.Add(ErrandsEntity);
+                _context.SaveChanges();
+                return ErrandsEntity.Id;
+            }
+            return _errand.Id;
+        }
+
+        //Read
+        public IEnumerable<CustomerEntity> GetAll()
+        {
+            return _context.Customers;
         }
     }
+
+
 }

@@ -11,5 +11,10 @@ namespace DataLagring_Projekt.Models
         public string Subject { get; set; } = null!;
         public string description { get; set; } = null!;
 
+        public int CustomerId { get; set; }
+        public int AdminId { get; set; }
+
+        public int StatusId { get; set; }
+
     }
 }
