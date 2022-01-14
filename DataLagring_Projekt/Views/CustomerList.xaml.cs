@@ -32,6 +32,10 @@ namespace DataLagring_Projekt.Views
             {
                 lvCustomers.Items.Add(customer);
             }
+            foreach(var address in _sqlService.GetAllAddress())
+            {
+                lvCustomers.Items.Add(address);
+            }
         }
     }
 }

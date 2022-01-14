@@ -94,6 +94,11 @@ namespace DataLagring_Projekt.Services
         {
             return _context.Customers;
         }
+
+        public IEnumerable<AddressEntity> GetAllAddress()
+        {
+            return _context.Addresses;
+        }
     }
 
 
