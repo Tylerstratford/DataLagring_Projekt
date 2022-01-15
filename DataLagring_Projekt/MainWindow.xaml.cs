@@ -26,23 +26,23 @@ namespace DataLagring_Projekt
         {
             InitializeComponent();
 
-            Customer customer = new Customer()
-            {
-                FirstName = "Ty",
-                LastName = "Strat",
-                Email = "tyler@hotmail.com",
-                Telephone = "0761720282",
-                Address = new Address
-                {
-                    StreetName = "StreetOne",
-                    City = "Örebro",
-                    PostalCode = "70233",
-                    Country = "Sweden"
-                }
-            };
+            //Customer customer = new Customer()
+            //{
+            //    FirstName = "Ty",
+            //    LastName = "Strat",
+            //    Email = "tyler@hotmail.com",
+            //    Telephone = "0761720282",
+            //    Address = new Address
+            //    {
+            //        StreetName = "StreetOne",
+            //        City = "Örebro",
+            //        PostalCode = "70233",
+            //        Country = "Sweden"
+            //    }
+            //};
 
-            SqlService sql = new SqlService();
-            var customerId = sql.CreateCustomer(customer);
+            //SqlService sql = new SqlService();
+            //var customerId = sql.CreateCustomer(customer);
 
             Errands errand = new Errands()
             {

@@ -31,11 +31,9 @@ namespace DataLagring_Projekt.Views
             foreach(var customer in _sqlService.GetAll())
             {
                 lvCustomers.Items.Add(customer);
+               
             }
-            foreach(var address in _sqlService.GetAllAddress())
-            {
-                lvCustomers.Items.Add(address);
-            }
+         
         }
     }
 }

@@ -90,14 +90,9 @@ namespace DataLagring_Projekt.Services
         }
 
         //Read
-        public IEnumerable<CustomerEntity> GetAll()
+        public IEnumerable<CustomerEntity>GetAll()
         {
-            return _context.Customers;
-        }
-
-        public IEnumerable<AddressEntity> GetAllAddress()
-        {
-            return _context.Addresses;
+            return _context.Customers.Include(x => x.Address);
         }
     }
 

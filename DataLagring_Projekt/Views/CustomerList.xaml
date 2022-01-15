@@ -50,24 +50,26 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="auto"/>
+
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{Binding FirstName}" Margin="0 0 5 0"/>
                         <TextBlock Grid.Column="1" Text="{Binding LastName}" Margin="0 0 5 0"/>
                         <TextBlock Grid.Column="2" Text="{Binding Email}" Margin="0 0 5 0"/>
                         <TextBlock Grid.Column="3" Text="{Binding Telephone}"/>
-                        <TextBlock Grid.Column="4" Text="{Binding StreetName}" />
-                        <TextBlock Grid.Column="5" Text="{Binding PostalCode}" />
-                        <TextBlock Grid.Column="6" Text="{Binding City}" />
-                        <TextBlock Grid.Column="7" Text="{Binding Country}" />
-                        <TextBlock Grid.Column="8" Text="{Binding CustomerId}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Address.StreetName}" />
+                        <TextBlock Grid.Column="5" Text="{Binding Address.PostalCode}" />
+                        <TextBlock Grid.Column="6" Text="{Binding Address.City}" />
+                        <TextBlock Grid.Column="7" Text="{Binding Address.Country}" />
+                        <TextBlock Grid.Column="8" Text="{Binding Id}" />
 
                     </Grid>
                 </DataTemplate>
