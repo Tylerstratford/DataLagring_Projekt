@@ -28,25 +28,25 @@
 
                <!--CustomerID-->
             <TextBlock Text="Customer Id" Grid.Row="1" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbCustomerId" Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
             <!--Administrator-->
             <TextBlock Text="Administrator" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbAdministrator" Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
                 <!--Subject-->
             <TextBlock Text="Subject" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbSubject" Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
                 <!--Status-->
             <TextBlock Text="Status" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbStatus" Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
                 <!--Description-->
             <TextBlock Text="Description" Grid.Row="5" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox Background="#e6e6e6" Height="60" MaxHeight="60" TextWrapping="Wrap" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbDescription" Background="#e6e6e6" Height="60" MaxHeight="60" TextWrapping="Wrap" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
-            <Button Content="Create Customer" Width="150" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="3" Margin="25 0 0 10"></Button>
+            <Button x:Name="btnAdd" Content="Create Errand" Width="150" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="3" Margin="25 0 0 10" Click="btnAdd_Click"></Button>
 
         </Grid>
     </Grid>

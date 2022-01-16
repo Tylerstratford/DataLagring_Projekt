@@ -18,8 +18,9 @@
                 </Grid.RowDefinitions>
             </Grid>
         </Grid>
-        <Grid Margin="25 90 20 0" Grid.Row="0">
+        <Grid Margin="25 90 20 0" Grid.Row="0" HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -37,11 +38,12 @@
             <TextBlock Text="First Name" Foreground="#0071bc" Grid.Column="0" Grid.Row="0" ></TextBlock>
             <TextBlock Text="Last Name" Foreground="#0071bc" Grid.Column="1" Grid.Row="0" ></TextBlock>
             <TextBlock Text="Email" Foreground="#0071bc" Grid.Column="2" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Street Name" Foreground="#0071bc" Grid.Column="3" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Postal Code" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="City" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="5" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Country" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Customer Id" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="7" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Telephone" Foreground="#0071bc" Grid.Column="3" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Street Name" Foreground="#0071bc" Grid.Column="4" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Postal Code" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="5" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="City" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Country" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="7" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Customer Id" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="8" Grid.Row="0" ></TextBlock>
         </Grid>
 
         <!--listView-->
