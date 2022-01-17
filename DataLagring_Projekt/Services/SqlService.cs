@@ -79,20 +79,26 @@ namespace DataLagring_Projekt.Services
                 ErrandsEntity.Subject = errand.Subject;
                 ErrandsEntity.CustomerId = errand.CustomerId;
                 ErrandsEntity.StatusId = errand.StatusId;
-                ErrandsEntity.Description = errand.description;
+                ErrandsEntity.Description = errand.Description;
                 ErrandsEntity.AdminId = errand.AdminId;
 
                 _context.Errands.Add(ErrandsEntity);
                 _context.SaveChanges();
                 return ErrandsEntity.Id;
             }
-            return _errand.Id;
+            return -1;
         }
 
         //Read
         public IEnumerable<CustomerEntity>GetAll()
         {
             return _context.Customers.Include(x => x.Address);
+        }
+
+        public IEnumerable<ErrandsEntity>GetErrandList()
+        {
+            //return _context.Errands.Include(x => x.CustomerId);
+            return _context.Errands;
         }
     }
 

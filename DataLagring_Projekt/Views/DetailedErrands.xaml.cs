@@ -17,19 +17,19 @@ using System.Windows.Shapes;
 namespace DataLagring_Projekt.Views
 {
     /// <summary>
-    /// Interaction logic for ListOfErrands.xaml
+    /// Interaction logic for DetailedErrands.xaml
     /// </summary>
-    public partial class ListOfErrands : UserControl
+    public partial class DetailedErrands : UserControl
     {
+
         private readonly SqlService _sqlService = new SqlService();
-        public ListOfErrands()
+        public DetailedErrands()
         {
             InitializeComponent();
-            lvErrands.Items.Clear();
+            lvDetailedErrands.Items.Clear();
             foreach (var errand in _sqlService.GetErrandList())
             {
-                lvErrands.Items.Add(errand);
-
+                lvDetailedErrands.Items.Add(errand);
             }
         }
     }

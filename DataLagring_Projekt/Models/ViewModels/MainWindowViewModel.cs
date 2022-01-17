@@ -15,6 +15,8 @@ namespace DataLagring_Projekt.Models.ViewModels
         public RelayCommand CreateCustomerViewCommand { get; set; } //CreeateCustomerViewModel - CreateCustomer
 
         public RelayCommand ListOfErrandsViewCommand { get; set; }
+        public RelayCommand DetailedErrandsViewCommand { get; set; }
+
         public RelayCommand RegisterErrandViewCommand { get; set; }
         public RelayCommand StartViewCommand { get; set; }
 
@@ -23,6 +25,8 @@ namespace DataLagring_Projekt.Models.ViewModels
         public CreateCustomerViewModel CreateCustomerViewModel { get; set; }
         public ListOfErrandsViewModel ListOfErrandsViewModel { get; set;}
         public RegisterErrandViewModel RegisterErrandViewModel { get; set; }
+        public DetailedErrandsViewModel DetailedErrandsViewModel { get; set; }
+
         public StartViewModel StartViewModel { get; set; }
 
 
@@ -43,6 +47,7 @@ namespace DataLagring_Projekt.Models.ViewModels
             CreateCustomerViewModel = new CreateCustomerViewModel();
             ListOfErrandsViewModel = new ListOfErrandsViewModel();
             RegisterErrandViewModel = new RegisterErrandViewModel();
+            DetailedErrandsViewModel = new DetailedErrandsViewModel();
             StartViewModel = new StartViewModel();
 
             CurrentView = StartViewModel;
@@ -51,6 +56,7 @@ namespace DataLagring_Projekt.Models.ViewModels
             CreateCustomerViewCommand = new RelayCommand(x => CurrentView = CreateCustomerViewModel);
             ListOfErrandsViewCommand = new RelayCommand(x => CurrentView = ListOfErrandsViewModel);
             RegisterErrandViewCommand = new RelayCommand(x => CurrentView = RegisterErrandViewModel);
+            DetailedErrandsViewCommand = new RelayCommand(x => CurrentView = DetailedErrandsViewModel);
             StartViewCommand = new RelayCommand(x => CurrentView = StartViewModel);
 
         }

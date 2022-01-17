@@ -24,6 +24,7 @@
             <Button Content="Customer List" Command="{Binding CustomerViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0" />
             <Button Content="Register Errand" Command="{Binding RegisterErrandViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
             <Button Content="List of Errands" Command="{Binding ListOfErrandsViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button Content="Detailed Errands" Command="{Binding DetailedErrandsViewCommand}" Height="25" Background="Transparent" Foreground="#1b1464" FontWeight="Medium" FontFamily="Verdana" BorderBrush="Transparent" BorderThickness="0" />
         </StackPanel>
         <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
     </Grid>

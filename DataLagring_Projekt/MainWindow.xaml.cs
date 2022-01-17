@@ -49,7 +49,7 @@ namespace DataLagring_Projekt
                 Subject = "Bad Wifi",
                 CustomerId = 13,
                 StatusId = 1,
-                description = "Wifi is not working as intended",
+                Description = "Wifi is not working as intended",
                 AdminId = 1,
             };
 

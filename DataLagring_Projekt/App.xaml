@@ -19,6 +19,9 @@
             <DataTemplate DataType="{x:Type viewModel:RegisterErrandViewModel}">
                 <view:RegisterErrand/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DetailedErrandsViewModel}">
+                <view:DetailedErrands/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:StartViewModel}">
                 <view:Start />
             </DataTemplate>
