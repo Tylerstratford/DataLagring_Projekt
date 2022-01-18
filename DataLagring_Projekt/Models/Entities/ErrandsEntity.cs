@@ -34,5 +34,7 @@ namespace DataLagring_Projekt.Models.Entities
         public int AdminId { get; set; }
 
 
+
+
     }
 }

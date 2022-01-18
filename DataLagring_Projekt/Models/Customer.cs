@@ -16,5 +16,7 @@ namespace DataLagring_Projekt.Models
         public string Telephone { get; set; } = null!;
 
         public virtual Address Address { get; set; } = null!;
+
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

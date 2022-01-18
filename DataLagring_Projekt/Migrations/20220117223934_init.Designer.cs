@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLagring_Projekt.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220115194556_init")]
+    [Migration("20220117223934_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

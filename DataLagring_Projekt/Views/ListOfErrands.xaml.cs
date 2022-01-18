@@ -24,12 +24,13 @@ namespace DataLagring_Projekt.Views
         private readonly SqlService _sqlService = new SqlService();
         public ListOfErrands()
         {
+
             InitializeComponent();
             lvErrands.Items.Clear();
             foreach (var errand in _sqlService.GetErrandList())
             {
                 lvErrands.Items.Add(errand);
-
+                
             }
         }
     }

@@ -9,5 +9,7 @@ namespace DataLagring_Projekt.Models
     internal class Admins
     {
         public string AdminName { get; set; } = null!;
+
+        public int AdminId { get; set; }
     }
 }
