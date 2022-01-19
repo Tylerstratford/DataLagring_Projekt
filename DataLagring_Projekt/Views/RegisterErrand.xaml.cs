@@ -23,8 +23,10 @@ namespace DataLagring_Projekt.Views
     public partial class RegisterErrand : UserControl
     {
         private readonly SqlService sqlService = new SqlService();
-        private readonly object CustomerId;
+        //private readonly object CustomerId;
 
+
+        //Add Errand
         public RegisterErrand()
         {
             InitializeComponent();
@@ -32,16 +34,23 @@ namespace DataLagring_Projekt.Views
             cbCustomerList.SelectedValuePath = "Key";
             cbCustomerList.DisplayMemberPath = "Value";
 
-            PopulateCustomerId();
+            cbAdmin.SelectedValuePath = "Key";
+            cbAdmin.DisplayMemberPath = "Value";
 
+            cbStatus.SelectedValuePath = "Key";
+            cbStatus.DisplayMemberPath= "Value";
+
+            PopulateCustomerId();
+            PopulateAdminId();
+            PopulateStatus();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             if(!string.IsNullOrEmpty(cbCustomerList.SelectedValuePath)
-                && !string.IsNullOrEmpty(tbAdministrator.Text)
+                && !string.IsNullOrEmpty(cbAdmin.SelectedValuePath)
                 && !string.IsNullOrEmpty(tbSubject.Text)
-                && !string.IsNullOrEmpty(tbStatus.Text)
+                //&& !string.IsNullOrEmpty(tbStatus.Text)
                 && !string.IsNullOrEmpty(tbDescription.Text))
             {
                 SqlService createErrand = new SqlService();
@@ -49,16 +58,10 @@ namespace DataLagring_Projekt.Views
                 Errands errands = new Errands()
                 {
                     Subject = tbSubject.Text,
-                    //StatusId = tbStatus.Text
                     Description = tbDescription.Text,
-                    //CustomerId  =  cbCustomerList.SelectedMemberPath
-                    //CustomerId = (int)cbCustomerList.SelectedValue
-                    //CustomerId = (int)cbCustomerList.SelectedValue
-                    //DateCreated = DateTime.Now,
-                    //CustomerId = (int)cbCustomerList.SelectedItem.ToString(),
-                    //CustomerId = 5,
                     CustomerId = (int)cbCustomerList.SelectedValue,
-                    
+                    AdminId = (int)cbAdmin.SelectedValue,
+                    Status = (Statuses)(int)cbStatus.SelectedValue,
                 };
                 createErrand.CreateErrand(errands);
                 ClearFields();
@@ -70,12 +73,14 @@ namespace DataLagring_Projekt.Views
         {
             tbSubject.Text = string.Empty;
             cbCustomerList.SelectedItem = null;
-            tbAdministrator.Text = string.Empty;
-            tbStatus.Text = string.Empty;
+            cbAdmin.SelectedItem = null;
+            //tbStatus.Text = string.Empty;
+            cbStatus.SelectedItem = null;
             tbDescription.Text = string.Empty;
             //tbError.Text = string.Empty;    
         }
 
+        //Popluate Customer ID
         private void PopulateCustomerId()
         {
             foreach(var customer in sqlService.GetAll())
@@ -84,5 +89,49 @@ namespace DataLagring_Projekt.Views
             }
         }
 
+
+        //Admins
+        private void PopulateAdminId()
+        {
+            cbAdmin.Items.Clear();
+            foreach (var admin in sqlService.GetAdminList())
+            {
+                cbAdmin.Items.Add(new KeyValuePair<int, string>(admin.Id, admin.AdminName));
+            }
+        }
+
+        private void btnAddAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(tbRegAdmin.Text))
+            {
+                SqlService createAdmin = new SqlService();
+                Admins admin = new Admins()
+                {
+                    AdminName = tbRegAdmin.Text,
+                };
+
+                
+                createAdmin.CreateAdmin(admin);
+                ClearAdminField();
+                PopulateAdminId();
+
+            }
+        }
+
+        public void ClearAdminField()
+        {
+            tbRegAdmin.Text = "";
+            cbAdmin.SelectedValue = null;
+        }
+
+        //Status
+     
+        private void PopulateStatus()
+        {
+            foreach(var status in Enum.GetValues(typeof(Statuses))) 
+            {
+                cbStatus.Items.Add(new KeyValuePair<int, string>((int)status, status.ToString()));
+            }
+        }
     }
 }

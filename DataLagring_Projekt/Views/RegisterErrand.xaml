@@ -13,7 +13,10 @@
                 <ColumnDefinition Width="150" />
                 <ColumnDefinition Width="25" />
                 <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -30,27 +33,35 @@
 
                <!--CustomerID-->
             <TextBlock Text="Customer" Grid.Row="1" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <ComboBox x:Name="cbCustomerList" Grid.Row="2" Grid.Column="0" Height="22" Margin="0 -5 0 0" ></ComboBox>
+            <ComboBox x:Name="cbCustomerList" Grid.Row="2" Grid.Column="0" Height="22" Margin="0 0 0 10" ></ComboBox>
                 <!--<TextBox x:Name="tbCustomerId" Background="#e6e6e6" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>-->
 
             <!--Administrator-->
             <TextBlock Text="Administrator" Grid.Row="1" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox x:Name="tbAdministrator" Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <ComboBox x:Name="cbAdmin" Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10" ></ComboBox>
+            <!--<TextBox x:Name="tbAdministrator" Background="#e6e6e6" Grid.Row="2" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>-->
 
+            <!--Register Admin-->
+            <TextBlock Text="Register New Administrator" Grid.Row="0" Grid.Column="4" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBlock Text="Name" Grid.Row="1" Grid.Column="4" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
+            <TextBox x:Name="tbRegAdmin" Background="#e6e6e6" Grid.Row="2" Grid.Column="4" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <Button x:Name="btnAddAdmin" Content="Add Administrator" Grid.Row="2" Grid.Column="5" HorizontalAlignment="right" Height="20" Margin="0 -8 0 0" Width="150" Click="btnAddAdmin_Click"></Button>
+            
                 <!--Subject-->
             <TextBlock Text="Subject" Grid.Row="3" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
             <TextBox x:Name="tbSubject" Background="#e6e6e6" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
                 <!--Status-->
             <TextBlock Text="Status" Grid.Row="3" Grid.Column="2" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox x:Name="tbStatus" Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <!--<TextBox x:Name="tbStatus" Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>-->
+            <ComboBox x:Name="cbStatus" Background="#e6e6e6" Grid.Row="4" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10"></ComboBox>
 
-                <!--Description-->
+            <!--Description-->
             <TextBlock Text="Description" Grid.Row="5" Grid.Column="0" Foreground="#0071bc" FontSize="16" Margin="0 0 0 10" ></TextBlock>
-            <TextBox x:Name="tbDescription" Background="#e6e6e6" Height="60" MaxHeight="60" TextWrapping="Wrap" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="tbDescription" Background="#e6e6e6" Height="60" MaxHeight="60" TextWrapping="Wrap" Grid.Row="6" Grid.ColumnSpan="6" BorderBrush="Transparent" Margin="0 0 0 10"></TextBox>
 
-            <Button x:Name="btnAdd" Content="Create Errand" Width="150" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="3" Margin="25 0 0 10" Click="btnAdd_Click"></Button>
-            <TextBlock x:Name="tbError"  Grid.Row="8" Grid.ColumnSpan="4" HorizontalAlignment="center" Foreground="#0071bc" FontSize="16" />
+            <Button x:Name="btnAdd" Content="Create Errand" Width="150" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="5" Margin="25 0 0 10" Click="btnAdd_Click"></Button>
+            <TextBlock x:Name="tbError"  Grid.Row="8" Grid.ColumnSpan="6" HorizontalAlignment="center" Foreground="#0071bc" FontSize="16" />
         </Grid>
         
         

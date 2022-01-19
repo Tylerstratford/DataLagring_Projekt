@@ -30,11 +30,15 @@ namespace DataLagring_Projekt.Models.Entities
         public int CustomerId { get; set; }
 
         //public virtual ICollection<CustomerEntity> CustomerEntities { get; set; }
-        public int StatusId { get; set; }
         public int AdminId { get; set; }
 
+        [Required]
+        public string Status { get; set; } = null!;
 
+        public virtual AdminsEntity Admin { get; set; }
 
+        public virtual CustomerEntity Customer { get; set; }
 
+        
     }
 }

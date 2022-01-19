@@ -6,12 +6,34 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="900">
     <Grid>
         <Grid Margin="20">
             <Grid>
                 <StackPanel Margin="20 0 0 0">
                     <Label Content="Errands in Detail" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
+                    <Grid Margin="5 0 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    
+
+                        <TextBlock Text="Choose Errand" Grid.Row="0" Grid.Column="0" Foreground="#0071bc" Margin="0 10 0 0"></TextBlock>
+                        <ComboBox x:Name="cbErrand" Background="#e6e6e6" Width="120" Grid.Row="0" Height="22" Grid.Column="2" BorderBrush="Transparent" VerticalAlignment="Top" Margin="0 10 0 0" ></ComboBox>
+                        <TextBlock Text="Change Status" Grid.Row="0" Grid.Column="4" Foreground="#0071bc" Margin="0 10 0 0"></TextBlock>
+                        <ComboBox x:Name="cbStatus" Background="#e6e6e6" Grid.Row="0" Height="22" Grid.Column="6" BorderBrush="Transparent" VerticalAlignment="Top" Margin="0 10 0 0" ></ComboBox>
+                        <Button x:Name="btnSaveChanges" Content="Save Changes" Grid.Row="0" Grid.Column="8" Height="22" Width="140" VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="25 10 20 0"></Button>
+
+                    </Grid>
+
                 </StackPanel>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -23,13 +45,15 @@
             <Grid Margin="25 90 20 0" Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="70" />
                     <ColumnDefinition Width="90" />
                     <ColumnDefinition Width="110" />
                     <ColumnDefinition Width="110" />
-                    <ColumnDefinition Width="110" />
-                    <ColumnDefinition Width="110" />
-                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="90" />
                     <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25" />
@@ -39,12 +63,12 @@
                 <TextBlock Text="Errand Id" Foreground="#0071bc" Grid.Column="0" Grid.Row="0" ></TextBlock>
                 <TextBlock Text="Subject" Foreground="#0071bc"  Grid.Column="1" Grid.Row="0" ></TextBlock>
                 <TextBlock Text="Date Created" Foreground="#0071bc"  Grid.Column="2" Grid.Row="0" ></TextBlock>
-                <TextBlock Text="Customer ID" Foreground="#0071bc"  Grid.Column="3" Grid.Row="0" ></TextBlock>
+                <TextBlock Text="Customer ID" Foreground="#0071bc"  Grid.Column="3" Grid.Row="0" Margin="25 0 0 0" ></TextBlock>
                 <TextBlock Text="Last Edit" Foreground="#0071bc"  Grid.Column="4" Grid.Row="0" ></TextBlock>
-                <TextBlock Text="Administrator" Foreground="#0071bc"  Grid.Column="5" Grid.Row="0" ></TextBlock>
-                <TextBlock Text="Description" Foreground="#0071bc"  Grid.Column="6" Grid.Row="0" ></TextBlock>
+                <TextBlock Text="Description" Foreground="#0071bc"  Grid.Column="5" Grid.Row="0" ></TextBlock>
+                <TextBlock Text="Administrator" Foreground="#0071bc"  Grid.Column="6" Grid.Row="0" ></TextBlock>
                 <TextBlock Text="Status" Foreground="#0071bc"  Grid.Column="7" Grid.Row="0" ></TextBlock>
-
+                
             </Grid>
 
             <!--listView-->
@@ -54,22 +78,29 @@
                         <Grid HorizontalAlignment="Stretch">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="60" />
-                                <ColumnDefinition Width="110" MaxWidth="90" />
+                                <ColumnDefinition Width="70" MaxWidth="90"/>
                                 <ColumnDefinition Width="115" />
+                                <ColumnDefinition Width="80" />
                                 <ColumnDefinition Width="115" />
-                                <ColumnDefinition Width="115" />
-                                <ColumnDefinition Width="115" />
-                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="170" />
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="60" />
+                                <!--<ColumnDefinition Width="100" />-->
+                                <!--<ColumnDefinition Width="*" />-->
+
+
 
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="{Binding Id}" />
                             <TextBlock Grid.Column="1" Text="{Binding Subject}" Margin="0 0 5 0" />
                             <TextBlock Grid.Column="2" Text="{Binding DateCreated}" />
                             <TextBlock Grid.Column="3" Text="{Binding CustomerId}" />
-                            <TextBlock Grid.Column="4" Text="{Binding DateEdited}"/> <!--not working yet as intended-->
-                            <TextBlock Grid.Column="6" Text="{Binding AdminId}"/> <!--not working yet as intended-->
-                            <TextBlock Grid.Column="5" Text="{Binding Description}"/> <!--not working yet as intended-->
-                            <TextBlock Grid.Column="7" Text="{Binding StatusId}" />
+                            <TextBlock Grid.Column="4" Text="{Binding DateEdited}"/> <!--not working yet as intended -  change to DateEdited-->
+                            <TextBlock Grid.Column="5" Text="{Binding Description}" TextWrapping="Wrap" /> 
+                            <TextBlock Grid.Column="6" Text="{Binding Admin.AdminName}" Margin="5 0 0 0" /> 
+                            <TextBlock Grid.Column="7" Text="{Binding Status}" HorizontalAlignment="Left" /> <!--not yet working-->
+                            <!--<ComboBox Name="cbStatus" ItemsSource="{Binding Status}" Grid.Column="8" MaxHeight="20" Width="80" Margin="0 0 15 0"></ComboBox>
+                            <Button Content="Save Changes" Grid.Column="9" Height="20" Width="80"  MaxHeight="20"></Button>-->
 
                         </Grid>
                     </DataTemplate>

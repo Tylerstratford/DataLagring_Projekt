@@ -15,6 +15,8 @@ namespace DataLagring_Projekt.Services
     {
         private readonly SqlContext _context = new SqlContext();
 
+
+        #region Create
         //Create Address
         public int CreateAddress(Address address)
         {
@@ -69,6 +71,8 @@ namespace DataLagring_Projekt.Services
             }
             return _admin.Id;
         }
+
+        //Create Errand
         public int CreateErrand(Errands errand)
         {
             var _errand = _context.Errands.Where(x => x.Subject == errand.Subject).FirstOrDefault();
@@ -78,7 +82,8 @@ namespace DataLagring_Projekt.Services
 
                 ErrandsEntity.Subject = errand.Subject;
                 ErrandsEntity.CustomerId = errand.CustomerId;
-                ErrandsEntity.StatusId = errand.StatusId;
+                //ErrandsEntity.StatusId = errand.StatusId;
+                ErrandsEntity.Status = errand.Status.ToString();
                 ErrandsEntity.Description = errand.Description;
                 ErrandsEntity.AdminId = errand.AdminId;
 
@@ -89,6 +94,9 @@ namespace DataLagring_Projekt.Services
             return -1;
         }
 
+
+        #endregion Create
+
         //Read
         public IEnumerable<CustomerEntity>GetAll()
         {
@@ -98,8 +106,16 @@ namespace DataLagring_Projekt.Services
         public IEnumerable<ErrandsEntity>GetErrandList()
         {
             //return _context.Errands.Include(x => x.CustomerId);
-            return _context.Errands;
+            return _context.Errands.Include(x => x.Admin).Include(x => x.Customer);
+
         }
+
+        public IEnumerable<AdminsEntity>GetAdminList()
+        {
+            return _context.Admins;
+        }
+
+       
     }
 
 

@@ -44,24 +44,24 @@ namespace DataLagring_Projekt
             //SqlService sql = new SqlService();
             //var customerId = sql.CreateCustomer(customer);
 
-            Errands errand = new Errands()
-            {
-                Subject = "Bad Wifi",
-                CustomerId = 13,
-                StatusId = 1,
-                Description = "Wifi is not working as intended",
-                AdminId = 1,
-            };
+            //Errands errand = new Errands()
+            //{
+            //    Subject = "Bad Wifi",
+            //    CustomerId = 13,
+            //    StatusId = 1,
+            //    Description = "Wifi is not working as intended",
+            //    AdminId = 1,
+            //};
 
-            SqlService sqlService = new SqlService();
-            var errandId = sqlService.CreateErrand(errand);
+            //SqlService sqlService = new SqlService();
+            //var errandId = sqlService.CreateErrand(errand);
 
-            Admins admins = new Admins()
-            {
-                AdminName = "Bob"
-            };
-            SqlService sql1 = new SqlService();
-            var adminId = sql1.CreateAdmin(admins);
+            //Admins admins = new Admins()
+            //{
+            //    AdminName = "Bob"
+            //};
+            //SqlService sql1 = new SqlService();
+            //var adminId = sql1.CreateAdmin(admins);
 
 
         }

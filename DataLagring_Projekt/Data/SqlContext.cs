@@ -23,7 +23,6 @@ namespace DataLagring_Projekt.Data
         public virtual DbSet<AdminsEntity> Admins { get; set; }
         public virtual DbSet<CustomerEntity> Customers { get; set; }
         public virtual DbSet<ErrandsEntity> Errands { get; set; }
-        public virtual DbSet<StatusEntity> Statuses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

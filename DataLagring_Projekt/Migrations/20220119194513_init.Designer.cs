@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLagring_Projekt.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220117223934_init")]
+    [Migration("20220119194513_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,9 +127,6 @@ namespace DataLagring_Projekt.Migrations
                     b.Property<int>("AdminId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerEntityId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
@@ -144,8 +141,9 @@ namespace DataLagring_Projekt.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subject")
                         .IsRequired()
@@ -154,25 +152,11 @@ namespace DataLagring_Projekt.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerEntityId");
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Errands");
-                });
-
-            modelBuilder.Entity("DataLagring_Projekt.Models.Entities.StatusEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Statuses");
                 });
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.CustomerEntity", b =>
@@ -188,9 +172,21 @@ namespace DataLagring_Projekt.Migrations
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.ErrandsEntity", b =>
                 {
-                    b.HasOne("DataLagring_Projekt.Models.Entities.CustomerEntity", null)
+                    b.HasOne("DataLagring_Projekt.Models.Entities.AdminsEntity", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataLagring_Projekt.Models.Entities.CustomerEntity", "Customer")
                         .WithMany("Errands")
-                        .HasForeignKey("CustomerEntityId");
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("DataLagring_Projekt.Models.Entities.AddressEntity", b =>

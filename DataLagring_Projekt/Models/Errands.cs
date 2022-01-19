@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataLagring_Projekt.Models
 {
+
+    public enum Statuses
+    {
+        Registered = 0,
+        Investigating = 1,
+        Closed = 2,
+    }
     internal class Errands
     {
         public string Subject { get; set; } = null!;
@@ -13,11 +20,17 @@ namespace DataLagring_Projekt.Models
 
         public int CustomerId { get; set; }
         public int AdminId { get; set; }
+        public string AdminName { get; set; } = null!;
 
-        public int StatusId { get; set; }
+        //public int StatusId { get; set; }
 
         public DateTime DateCreated { get; set; }
         public DateTime DateEdited { get; set; }
+
+        public Statuses Status { get; set; }
+
+        //public string FullName { get; set; } = null!;
+
 
     }
 }
