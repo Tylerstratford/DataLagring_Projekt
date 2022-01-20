@@ -30,6 +30,17 @@
             <TextBlock Text="Description" Foreground="#0071bc" Grid.Column="3" Grid.Row="0" ></TextBlock>
             <TextBlock Text="Status" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" ></TextBlock>
 
+            <Grid Grid.Row="1">
+                <ListView x:Name="lvErrands" Margin="20 130 20 26" Background="Transparent" Foreground="#0071bc" DataContext="Datalagring_Projekt.Models" FontSize="10">
+                    <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Grid.Column="1" Text="{Binding Id}"  />
+
+                    </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </Grid>
+        
      </Grid>
 </UserControl>

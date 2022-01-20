@@ -82,7 +82,6 @@ namespace DataLagring_Projekt.Services
 
                 ErrandsEntity.Subject = errand.Subject;
                 ErrandsEntity.CustomerId = errand.CustomerId;
-                //ErrandsEntity.StatusId = errand.StatusId;
                 ErrandsEntity.Status = errand.Status.ToString();
                 ErrandsEntity.Description = errand.Description;
                 ErrandsEntity.AdminId = errand.AdminId;
@@ -92,6 +91,20 @@ namespace DataLagring_Projekt.Services
                 return ErrandsEntity.Id;
             }
             return -1;
+        }
+
+        public void UpdateStatus(int id, ErrandsEntity newStatus)
+        {
+
+            var updateStatus = _context.Errands.Find(id);
+
+            if (updateStatus == null)
+            {
+                updateStatus.Status = newStatus.Status.ToString();
+                //updateStatus = newStatus.(Statuses)Status;
+                _context.Update(updateStatus);
+                _context.SaveChanges();
+            }
         }
 
 

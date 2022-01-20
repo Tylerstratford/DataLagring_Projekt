@@ -22,14 +22,11 @@ namespace DataLagring_Projekt.Models
         public int AdminId { get; set; }
         public string AdminName { get; set; } = null!;
 
-        //public int StatusId { get; set; }
-
         public DateTime DateCreated { get; set; }
         public DateTime DateEdited { get; set; }
 
         public Statuses Status { get; set; }
 
-        //public string FullName { get; set; } = null!;
 
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLagring_Projekt.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace DataLagring_Projekt.Views
     /// </summary>
     public partial class Start : UserControl
     {
+
+        private readonly SqlService _sqlService = new SqlService();
+
         public Start()
         {
             InitializeComponent();
+            lvErrands.Items.Clear();
+            foreach (var errand in _sqlService.GetErrandList())
+            {
+                lvErrands.Items.Add(errand);
+            }
         }
+
+
     }
 }

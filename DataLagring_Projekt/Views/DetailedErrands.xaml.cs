@@ -64,8 +64,35 @@ namespace DataLagring_Projekt.Views
             }
         }
 
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(cbStatus.SelectedValuePath) && !string.IsNullOrEmpty(cbErrand.SelectedValuePath))
+            //{
+            //    SqlService update = new SqlService();
 
+            //    var newStatus = (Statuses)Enum.Parse(typeof(Statuses), cbStatus.SelectedValue.ToString());
+            //    int errandId = cbErrand.SelectedIndex;
 
+            //    Errands updateStatus = new Errands()
+            //    {
+            //        Status = newStatus
 
+            //    };
+
+            //    update.UpdateStatus(errandId, updateStatus);
+
+            //    ClearSavedChangesFields();
+            //}
+
+            //btnSaveChanges.Content = "Saved";
+        }
+
+       
+
+        private void ClearSavedChangesFields()
+        {
+            cbErrand.SelectedValue = null;
+            cbStatus.SelectedValue = null;
+        }
     }
 }
