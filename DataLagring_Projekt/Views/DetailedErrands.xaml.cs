@@ -1,4 +1,5 @@
 ﻿using DataLagring_Projekt.Models;
+using DataLagring_Projekt.Models.Entities;
 using DataLagring_Projekt.Services;
 using System;
 using System.Collections.Generic;
@@ -66,25 +67,25 @@ namespace DataLagring_Projekt.Views
 
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            //if (!string.IsNullOrEmpty(cbStatus.SelectedValuePath) && !string.IsNullOrEmpty(cbErrand.SelectedValuePath))
-            //{
-            //    SqlService update = new SqlService();
+            if (!string.IsNullOrEmpty(cbStatus.SelectedValuePath) && !string.IsNullOrEmpty(cbErrand.SelectedValuePath))
+            {
+                SqlService update = new SqlService();
 
-            //    var newStatus = (Statuses)Enum.Parse(typeof(Statuses), cbStatus.SelectedValue.ToString());
-            //    int errandId = cbErrand.SelectedIndex;
+                var newStatus = (Statuses)Enum.Parse(typeof(Statuses), cbStatus.SelectedValue.ToString());
+                int errandId = (int)cbErrand.SelectedValue;
 
-            //    Errands updateStatus = new Errands()
-            //    {
-            //        Status = newStatus
+                ErrandsEntity updateStatus = new ErrandsEntity()
+                {
+                    Status = newStatus.ToString()
 
-            //    };
+                };
 
-            //    update.UpdateStatus(errandId, updateStatus);
+                update.UpdateStatus(errandId, updateStatus);
 
-            //    ClearSavedChangesFields();
-            //}
+                ClearSavedChangesFields();
+            }
 
-            //btnSaveChanges.Content = "Saved";
+            btnSaveChanges.Content = "Saved";
         }
 
        

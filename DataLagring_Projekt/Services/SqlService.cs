@@ -98,7 +98,7 @@ namespace DataLagring_Projekt.Services
 
             var updateStatus = _context.Errands.Find(id);
 
-            if (updateStatus == null)
+            if (updateStatus != null)
             {
                 updateStatus.Status = newStatus.Status.ToString();
                 //updateStatus = newStatus.(Statuses)Status;
@@ -129,6 +129,15 @@ namespace DataLagring_Projekt.Services
         }
 
        
+
+        public IEnumerable<ErrandsEntity> GetErrands()
+        {
+            return _context.Errands;
+        }
+
+  
+
+
     }
 
 
