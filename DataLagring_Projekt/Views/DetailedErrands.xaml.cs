@@ -26,8 +26,6 @@ namespace DataLagring_Projekt.Views
 
         private readonly SqlService _sqlService = new SqlService();
 
-       
-
         //Read List of Errands
         public DetailedErrands()
         {
@@ -49,6 +47,7 @@ namespace DataLagring_Projekt.Views
             PopulateErrands();
         }
 
+        //Populate Statues to combobox
         private void PopulateStatus()
         {
             foreach (var status in Enum.GetValues(typeof(Statuses)))
@@ -57,6 +56,7 @@ namespace DataLagring_Projekt.Views
             }
         }
 
+        //Populate Errands to Combobox
         private void PopulateErrands()
         {
             foreach (var errand in _sqlService.GetErrandList())
@@ -65,6 +65,7 @@ namespace DataLagring_Projekt.Views
             }
         }
 
+        //Save Changed status - Button
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(cbStatus.SelectedValuePath) && !string.IsNullOrEmpty(cbErrand.SelectedValuePath))
@@ -76,20 +77,27 @@ namespace DataLagring_Projekt.Views
 
                 ErrandsEntity updateStatus = new ErrandsEntity()
                 {
-                    Status = newStatus.ToString()
-
+                    Status = newStatus.ToString(),
+                    DateEdited = DateTime.Now,
                 };
 
                 update.UpdateStatus(errandId, updateStatus);
 
                 ClearSavedChangesFields();
-            }
 
-            btnSaveChanges.Content = "Saved";
+                //foreach (var errand in _sqlService.GetErrandList())
+                //{
+                //    lvDetailedErrands.Items.Clear(errand);
+                //}
+
+                lvDetailedErrands.Items.Clear();
+
+            }
+          
         }
 
-       
 
+        //Clear Fields - Errand & Status
         private void ClearSavedChangesFields()
         {
             cbErrand.SelectedValue = null;

@@ -6,56 +6,7 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <!--<Grid>
-        <StackPanel Margin="20 0 0 0">
-            <Label Content="Start" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
-            <Label Content="Recent Errands posted" Foreground="#0071bc" FontSize="20"></Label>
-        </StackPanel>
-        <Grid Margin="25 90 20 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <TextBlock Text="Errand" Foreground="#0071bc" Grid.Column="0" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Customer" Foreground="#0071bc" Grid.Column="1" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Subject" Foreground="#0071bc" Grid.Column="2" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Description" Foreground="#0071bc" Grid.Column="3" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Status" Foreground="#0071bc" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" ></TextBlock>
-
-            <Grid Grid.Row="1">
-                <ListView x:Name="lvErrands" Background="Transparent" Foreground="#0071bc" DataContext="Datalagring_Projekt.Models" FontSize="10">
-                    <ListView.ItemTemplate>
-                    <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <TextBlock Grid.Column="0" Text="{Binding Id}" ></TextBlock>
-                                <TextBlock Grid.Column="1" Text="{Binding Customer.FullName}" ></TextBlock>
-
-                            </Grid>
-
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-               
-            </Grid>
-        </Grid>
-        
-     </Grid>-->
+   
     <Grid Margin="20" HorizontalAlignment="Stretch">
         <Grid>
             <StackPanel Margin="20 0 0 0">
@@ -82,35 +33,23 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
-
-
-
             </Grid.RowDefinitions>
 
             <TextBlock Text="Errand Id" Foreground="#0071bc" Grid.Column="0" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Customer" Foreground="#0071bc"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" ></TextBlock>
+            <TextBlock Text="Date Created" Foreground="#0071bc"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" ></TextBlock>
             <TextBlock Text="Subject" Foreground="#0071bc"  Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left"></TextBlock>
             <TextBlock Text="Description" Foreground="#0071bc"  Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" ></TextBlock>
             <TextBlock Text="Status" Foreground="#0071bc"  Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right"></TextBlock>
-            <TextBlock Text="Status - Registered" Foreground="#0071bc" Grid.Row="3" Grid.Column="0" ></TextBlock>
-            <TextBlock Text="Status - Investigating" Foreground="#0071bc" Grid.Row="3" Grid.Column="1" Background="red"></TextBlock>
-            <TextBlock Text="Status - Closed" Foreground="#0071bc" Grid.Row="3" Grid.Column="2" Background="red"></TextBlock>
-            <TextBlock Text="Total Errands" Foreground="#0071bc" Grid.Row="3" Grid.Column="3" ></TextBlock>
-            <ListView x:Name="lvErrandss" Grid.Row="4" Grid.ColumnSpan="4" HorizontalContentAlignment="Stretch" Foreground="black" DataContext="Datalagring_Projekt.Models">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Customer.FullName}"></TextBlock>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <TextBlock x:Name="TEST" Grid.Column="0" Grid.Row="1" Text="Hello"></TextBlock>
-            <TextBlock x:Name="TEST1" Grid.Column="1" Grid.Row="1" Text="Hello"></TextBlock>
-            <TextBlock x:Name="TEST2" Grid.Column="2" Grid.Row="1" Text="Hello"></TextBlock>
-            <TextBlock x:Name="TEST3" Grid.Column="3" Grid.Row="1" Text="Hello"></TextBlock>
-
-
-
+            <TextBlock Text="Status - Total Registered" Foreground="#0071bc" Grid.Row="3" Grid.Column="0" FontSize="12" ></TextBlock>
+            <TextBlock Text="Status - Total Investigating" Foreground="#0071bc" Grid.Row="3" Grid.Column="1" FontSize="12" ></TextBlock>
+            <TextBlock Text="Status - Total Closed" Foreground="#0071bc" Grid.Row="3" Grid.Column="2" FontSize="12" ></TextBlock>
+            <TextBlock Text="Total Errands" Foreground="#0071bc" Grid.Row="3" Grid.Column="3" FontSize="15" ></TextBlock>
+           
+             <!--Counters-->
+            <TextBlock x:Name="StatusReg" Foreground="#0071bc" FontSize="18" Grid.Column="0" Grid.Row="4" ></TextBlock>
+            <TextBlock x:Name="StatusInv" Foreground="#0071bc" FontSize="18" Grid.Column="1" Grid.Row="4" ></TextBlock>
+            <TextBlock x:Name="StatusClo" Foreground="#0071bc" FontSize="18" Grid.Column="2" Grid.Row="4" ></TextBlock>
+            <TextBlock x:Name="TotalErrands" Foreground="#0071bc" FontSize="18" Grid.Column="3" Grid.Row="4" ></TextBlock>
         </Grid>
 
         <!--listView-->
@@ -127,7 +66,7 @@
 
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{Binding Id}"  />
-                        <TextBlock Grid.Column="1" Text="{Binding Customer.FullName}" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="{Binding DateCreated}" TextWrapping="Wrap" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="2" Text="{Binding Subject}" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="3" Text="{Binding Description}" TextWrapping="Wrap" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="4" Text="{Binding Status}" HorizontalAlignment="Right"/>
@@ -135,8 +74,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
-        
     </Grid>
 </UserControl>

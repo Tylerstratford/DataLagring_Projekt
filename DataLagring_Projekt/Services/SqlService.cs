@@ -93,6 +93,10 @@ namespace DataLagring_Projekt.Services
             return -1;
         }
 
+        #endregion Create
+
+        #region Update
+        //Update Status
         public void UpdateStatus(int id, ErrandsEntity newStatus)
         {
 
@@ -101,15 +105,16 @@ namespace DataLagring_Projekt.Services
             if (updateStatus != null)
             {
                 updateStatus.Status = newStatus.Status.ToString();
-                //updateStatus = newStatus.(Statuses)Status;
+                updateStatus.DateEdited = newStatus.DateEdited;
                 _context.Update(updateStatus);
                 _context.SaveChanges();
             }
         }
 
+        #endregion Update
 
-        #endregion Create
 
+        #region Read
         //Read
         public IEnumerable<CustomerEntity>GetAll()
         {
@@ -135,7 +140,7 @@ namespace DataLagring_Projekt.Services
             return _context.Errands;
         }
 
-  
+        #endregion Read
 
 
     }

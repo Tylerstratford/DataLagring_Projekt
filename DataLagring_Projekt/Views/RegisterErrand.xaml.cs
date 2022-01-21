@@ -114,7 +114,6 @@ namespace DataLagring_Projekt.Views
                 createAdmin.CreateAdmin(admin);
                 ClearAdminField();
                 PopulateAdminId();
-
             }
         }
 
@@ -125,7 +124,6 @@ namespace DataLagring_Projekt.Views
         }
 
         //Status
-     
         private void PopulateStatus()
         {
             foreach(var status in Enum.GetValues(typeof(Statuses))) 
