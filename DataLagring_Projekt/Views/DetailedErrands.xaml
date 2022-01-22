@@ -89,7 +89,7 @@
 
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="{Binding Id}" />
-                            <TextBlock Grid.Column="1" Text="{Binding Subject}" Margin="0 0 5 0" />
+                            <TextBlock Grid.Column="1" Text="{Binding Subject}" TextWrapping="Wrap" Margin="0 0 5 0" />
                             <TextBlock Grid.Column="2" Text="{Binding DateCreated}" />
                             <TextBlock Grid.Column="3" Text="{Binding CustomerId}" />
                             <TextBlock Grid.Column="4" Text="{Binding DateEdited}"/> 
