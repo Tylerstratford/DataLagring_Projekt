@@ -27,7 +27,5 @@ namespace DataLagring_Projekt.Models
 
         public Statuses Status { get; set; }
 
-
-
     }
 }

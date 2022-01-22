@@ -48,18 +48,17 @@ namespace DataLagring_Projekt.Views
                         PostalCode = tbPostalCode.Text,
                     }
 
-
                 };
 
 
                  if (createCustomer.CreateCustomer(customer) > 0)
                 {
                     ClearFields();
+                    tbError.Text = string.Empty;
 
                 } else
                 {
-                    tbError.Text = "A user with this email already exists.";
-
+                    tbError.Text = "A customer with this email already exists.";
                 }
             }
         }
@@ -76,6 +75,7 @@ namespace DataLagring_Projekt.Views
             tbCountry.Text = string.Empty;
             tbError.Text = string.Empty;
         }
+
     }
 
 

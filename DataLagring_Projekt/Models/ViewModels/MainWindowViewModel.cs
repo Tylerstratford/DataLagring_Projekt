@@ -11,8 +11,8 @@ namespace DataLagring_Projekt.Models.ViewModels
     {
 
         //Relay commands
-        public RelayCommand CustomerViewCommand { get; set; } //CustomerListViewModel - CustomerList
-        public RelayCommand CreateCustomerViewCommand { get; set; } //CreeateCustomerViewModel - CreateCustomer
+        public RelayCommand CustomerViewCommand { get; set; } 
+        public RelayCommand CreateCustomerViewCommand { get; set; } 
 
         public RelayCommand ListOfErrandsViewCommand { get; set; }
         public RelayCommand DetailedErrandsViewCommand { get; set; }

@@ -64,10 +64,10 @@
 
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{Binding FirstName}" />
-                        <TextBlock Grid.Column="1" Text="{Binding LastName}" />
-                        <TextBlock Grid.Column="2" Text="{Binding Email}" />
+                        <TextBlock Grid.Column="1" Text="{Binding LastName}" TextWrapping="Wrap" />
+                        <TextBlock Grid.Column="2" Text="{Binding Email}" TextWrapping="Wrap" />
                         <TextBlock Grid.Column="3" Text="{Binding Telephone}"/>
-                        <TextBlock Grid.Column="4" Text="{Binding Address.StreetName}"  />
+                        <TextBlock Grid.Column="4" Text="{Binding Address.StreetName}" TextWrapping="Wrap" />
                         <TextBlock Grid.Column="5" Text="{Binding Address.PostalCode}"  />
                         <TextBlock Grid.Column="6" Text="{Binding Address.City}" />
                         <TextBlock Grid.Column="7" Text="{Binding Address.Country}" />

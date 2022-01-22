@@ -29,7 +29,6 @@ namespace DataLagring_Projekt.Models.Entities
         [Required]
         public int CustomerId { get; set; }
 
-        //public virtual ICollection<CustomerEntity> CustomerEntities { get; set; }
         public int AdminId { get; set; }
 
         [Required]
@@ -39,6 +38,5 @@ namespace DataLagring_Projekt.Models.Entities
 
         public virtual CustomerEntity Customer { get; set; }
 
-        
     }
 }

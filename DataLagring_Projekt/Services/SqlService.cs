@@ -69,7 +69,7 @@ namespace DataLagring_Projekt.Services
                 _context.SaveChanges();
                 return AdminsEntity.Id;
             }
-            return _admin.Id;
+            return -1;
         }
 
         //Create Errand
@@ -123,17 +123,13 @@ namespace DataLagring_Projekt.Services
 
         public IEnumerable<ErrandsEntity>GetErrandList()
         {
-            //return _context.Errands.Include(x => x.CustomerId);
             return _context.Errands.Include(x => x.Admin).Include(x => x.Customer);
-
         }
 
         public IEnumerable<AdminsEntity>GetAdminList()
         {
             return _context.Admins;
         }
-
-       
 
         public IEnumerable<ErrandsEntity> GetErrands()
         {
@@ -142,8 +138,6 @@ namespace DataLagring_Projekt.Services
 
         #endregion Read
 
-
     }
-
 
 }

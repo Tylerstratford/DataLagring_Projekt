@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DataLagring_Projekt.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20">
+    <Grid Margin="20" >
         <Grid>
             <StackPanel Margin="20 0 0 0">
                 <Label Content="Errands List" Foreground="#0071bc" FontSize="23" FontWeight="Medium"></Label>
@@ -38,8 +38,8 @@
             <TextBlock Text="Date Created" Foreground="#0071bc"  Grid.Column="2" Grid.Row="0" ></TextBlock>
             <TextBlock Text="Customer ID" Foreground="#0071bc"  Grid.Column="3" Grid.Row="0" ></TextBlock>
             <TextBlock Text="Customer Name" Foreground="#0071bc"  Grid.Column="4" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Customer Phone" Foreground="#0071bc"  Grid.Column="5" Grid.Row="0" ></TextBlock>
-            <TextBlock Text="Status" Foreground="#0071bc"  Grid.Column="6" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Customer Phone #" Foreground="#0071bc"  Grid.Column="5" Grid.Row="0" ></TextBlock>
+            <TextBlock Text="Status" Foreground="#0071bc"  Grid.Column="6" Grid.Row="0" HorizontalAlignment="Right" ></TextBlock>
         </Grid>
 
         <!--listView-->
@@ -61,9 +61,9 @@
                         <TextBlock Grid.Column="1" Text="{Binding Subject}" Margin="0 0 5 0" />
                         <TextBlock Grid.Column="2" Text="{Binding DateCreated}" />
                         <TextBlock Grid.Column="3" Text="{Binding CustomerId}" />
-                        <TextBlock Grid.Column="4" Text="{Binding Customer.FullName}"/> <!--not working-->
-                        <TextBlock Grid.Column="5" Text="{Binding Customer.Telephone}"/> <!--not working-->
-                        <TextBlock Grid.Column="6" Text="{Binding Status}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Customer.FullName}" TextWrapping="Wrap"/>
+                        <TextBlock Grid.Column="5" Text="{Binding Customer.Telephone}"/>
+                        <TextBlock Grid.Column="6" Text="{Binding Status}" HorizontalAlignment="Right"/>
 
                     </Grid>
                 </DataTemplate>

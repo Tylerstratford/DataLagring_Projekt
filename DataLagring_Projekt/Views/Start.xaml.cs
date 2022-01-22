@@ -29,12 +29,7 @@ namespace DataLagring_Projekt.Views
         {
             InitializeComponent();
             lvErrands.Items.Clear();
-            //foreach (var errand in _sqlService.GetErrandList())
-            //{
-            //    lvErrands.Items.Add(errand);
-            //}
-
-  
+          
             List<ErrandsEntity> list = new List<ErrandsEntity>();
 
             
@@ -45,7 +40,6 @@ namespace DataLagring_Projekt.Views
 
             var showErrands = list.OrderBy(x => x.Id).Reverse().Take(10).ToList();
 
-            //lvErrands.Add = showErrands;
 
             foreach(var errand in showErrands)
             {
@@ -59,15 +53,11 @@ namespace DataLagring_Projekt.Views
             int counterCloErrand = list.Where(x => x.Status == "Closed").Count();
             int totalErrands = list.Count();
 
-
             StatusReg.Text = counterRegErrand.ToString();
             StatusInv.Text =  counterInvErrand.ToString();
             StatusClo.Text = counterCloErrand.ToString();
             TotalErrands.Text = totalErrands.ToString();
         }
-
-
-       
 
     }
 }

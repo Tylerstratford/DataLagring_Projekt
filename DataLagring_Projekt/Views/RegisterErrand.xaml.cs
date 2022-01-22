@@ -23,7 +23,6 @@ namespace DataLagring_Projekt.Views
     public partial class RegisterErrand : UserControl
     {
         private readonly SqlService sqlService = new SqlService();
-        //private readonly object CustomerId;
 
 
         //Add Errand
@@ -50,7 +49,6 @@ namespace DataLagring_Projekt.Views
             if(!string.IsNullOrEmpty(cbCustomerList.SelectedValuePath)
                 && !string.IsNullOrEmpty(cbAdmin.SelectedValuePath)
                 && !string.IsNullOrEmpty(tbSubject.Text)
-                //&& !string.IsNullOrEmpty(tbStatus.Text)
                 && !string.IsNullOrEmpty(tbDescription.Text))
             {
                 SqlService createErrand = new SqlService();
@@ -74,10 +72,8 @@ namespace DataLagring_Projekt.Views
             tbSubject.Text = string.Empty;
             cbCustomerList.SelectedItem = null;
             cbAdmin.SelectedItem = null;
-            //tbStatus.Text = string.Empty;
             cbStatus.SelectedItem = null;
             tbDescription.Text = string.Empty;
-            //tbError.Text = string.Empty;    
         }
 
         //Popluate Customer ID
@@ -85,7 +81,7 @@ namespace DataLagring_Projekt.Views
         {
             foreach(var customer in sqlService.GetAll())
             {
-                cbCustomerList.Items.Add(new KeyValuePair<int,string>(customer.Id, customer.FirstName));
+                cbCustomerList.Items.Add(new KeyValuePair<int,string>(customer.Id, $"Id: {customer.Id} - {customer.FirstName} {customer.LastName}"));
             }
         }
 
@@ -96,7 +92,7 @@ namespace DataLagring_Projekt.Views
             cbAdmin.Items.Clear();
             foreach (var admin in sqlService.GetAdminList())
             {
-                cbAdmin.Items.Add(new KeyValuePair<int, string>(admin.Id, admin.AdminName));
+                cbAdmin.Items.Add(new KeyValuePair<int, string>(admin.Id, $"Id: {admin.Id} - {admin.AdminName}"));
             }
         }
 
@@ -110,11 +106,19 @@ namespace DataLagring_Projekt.Views
                     AdminName = tbRegAdmin.Text,
                 };
 
-                
-                createAdmin.CreateAdmin(admin);
-                ClearAdminField();
-                PopulateAdminId();
+
+                if (createAdmin.CreateAdmin(admin) > 0)
+                {
+                    ClearAdminField();
+                    PopulateAdminId();
+                    tbErrorAdmin.Text = string.Empty;
+                }
+                else
+                {
+                    tbErrorAdmin.Text = "An admin with this name already exists.";
+                }
             }
+            
         }
 
         public void ClearAdminField()

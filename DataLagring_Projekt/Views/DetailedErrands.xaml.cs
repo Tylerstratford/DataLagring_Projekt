@@ -61,7 +61,7 @@ namespace DataLagring_Projekt.Views
         {
             foreach (var errand in _sqlService.GetErrandList())
             {
-                cbErrand.Items.Add(new KeyValuePair<int, string>(errand.Id, errand.Subject));
+                cbErrand.Items.Add(new KeyValuePair<int, string>(errand.Id, $"Id: {errand.Id} {errand.Subject}"));
             }
         }
 
@@ -85,15 +85,8 @@ namespace DataLagring_Projekt.Views
 
                 ClearSavedChangesFields();
 
-                //foreach (var errand in _sqlService.GetErrandList())
-                //{
-                //    lvDetailedErrands.Items.Clear(errand);
-                //}
-
-                lvDetailedErrands.Items.Clear();
-
             }
-          
+           
         }
 
 
@@ -103,5 +96,9 @@ namespace DataLagring_Projekt.Views
             cbErrand.SelectedValue = null;
             cbStatus.SelectedValue = null;
         }
+
+     
+
+        
     }
 }
